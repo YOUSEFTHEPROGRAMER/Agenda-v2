@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="ligth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>أجندة الملتقى الدولي الرابع للذكاء الاصطناعي 2026</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Cairo', 'sans-serif'] },
+                    colors: { darkBg: '#030712' }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #030712;
+            color: #f8fafc;
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .bg-grid {
+            background-size: 24px 24px;
+            background-image: 
+                linear-gradient(to right, rgba(128, 128, 128, 0.07) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(128, 128, 128, 0.07) 1px, transparent 1px);
+            mask-image: radial-gradient(ellipse 60% 50% at 50% 0%, #000 70%, transparent 100%);
+            -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 0%, #000 70%, transparent 100%);
+        }
+
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; scroll-behavior: smooth; }
+
+        .hw-accel {
+            will-change: transform, opacity;
+            transform: translateZ(0);
+        }
+
+        @keyframes blobBounce1 {
+            0%, 100% { transform: translate3d(0,0,0) scale(1); opacity: 0.3; }
+            50% { transform: translate3d(30px,20px,0) scale(1.1); opacity: 0.5; }
+        }
+        .animate-blob-1 { animation: blobBounce1 15s infinite ease-in-out alternate; }
+
+        @keyframes blobBounce2 {
+            0%, 100% { transform: translate3d(0,0,0) scale(1); opacity: 0.2; }
+            50% { transform: translate3d(-30px,-20px,0) scale(1.2); opacity: 0.4; }
+        }
+        .animate-blob-2 { animation: blobBounce2 18s infinite ease-in-out alternate; }
+
+        @keyframes timelineFlow {
+            0% { top: -10%; opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { top: 110%; opacity: 0; }
+        }
+        .animate-timeline { animation: timelineFlow 4s infinite linear; }
+
+        .spring-up { animation: springUpAnim 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
+        @keyframes springUpAnim {
+            0% { opacity: 0; transform: translateY(30px) scale(0.95); filter: blur(8px); }
+            100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+        }
+
+        .slide-in { animation: slideInX 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+        @keyframes slideInX {
+            0% { opacity: 0; transform: translate3d(calc(40px * var(--dir-sign, 1)), 0, 0); }
+            100% { opacity: 1; transform: translate3d(0, 0, 0); }
+        }
+        html[dir="rtl"] { --dir-sign: 1; }
+        html[dir="ltr"] { --dir-sign: -1; }
+
+        .fade-out-blur { animation: fadeOutBlurAnim 0.3s ease-out forwards; pointer-events: none; }
+        @keyframes fadeOutBlurAnim {
+            0% { opacity: 1; transform: translateY(0); filter: blur(0); }
+            100% { opacity: 0; transform: translateY(-15px); filter: blur(8px); }
+        }
+
+        @keyframes waveAnim {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-20deg); }
+            75% { transform: rotate(20deg); }
+        }
+        .animate-wave { animation: waveAnim 2s infinite ease-in-out; transform-origin: bottom right; }
+
+        @keyframes pulseLogo {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.15); opacity: 0.8; }
+        }
+        .animate-pulse-logo { animation: pulseLogo 4s infinite ease-in-out; }
+
+        ::selection { background: rgba(99, 102, 241, 0.3); color: #fff; }
+    </style>
+</head>
+<body class="relative min-h-[100dvh] font-sans antialiased transition-colors duration-700 bg-slate-50 dark:bg-[#030712] text-slate-900 dark:text-white pb-10">
+
+    <a href="Welcome Screen.html" class="absolute top-4 md:top-8 left-4 md:left-8 z-50 flex items-center justify-center gap-2 bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl px-4 py-2 sm:py-2.5 rounded-full shadow-lg border border-slate-200 dark:border-slate-700/50 transition-all duration-300 hover:scale-105 active:scale-95 group">
+        <i data-lucide="arrow-right" class="w-4 h-4 text-slate-500 dark:text-slate-400 group-hover:text-blue-500 transition-colors rtl:rotate-0 ltr:rotate-180"></i>
+        <span data-i18n="back" class="text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-200 uppercase tracking-wide">رجوع</span>
+    </a>
+
+    <div class="absolute top-4 md:top-8 left-1/2 -translate-x-1/2 z-50 flex flex-col items-center" id="lang-switcher-container">
+        <button id="lang-toggle-btn" class="flex items-center gap-2 bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl px-4 py-2.5 rounded-full shadow-lg border border-slate-200 dark:border-slate-700/50 transition-all duration-300 hover:bg-white dark:hover:bg-slate-800 hover:scale-[1.02] active:scale-95 group">
+            <i data-lucide="globe" class="w-[18px] h-[18px] text-slate-500 dark:text-slate-400 group-hover:text-blue-500 transition-colors"></i>
+            <span id="current-lang-display" class="text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-200 uppercase tracking-wide">🇸🇦 AR</span>
+            <i data-lucide="chevron-down" id="lang-chevron" class="w-4 h-4 text-slate-400 transition-transform duration-300"></i>
+        </button>
+        <div id="lang-dropdown" class="absolute top-full mt-3 min-w-[160px] bg-white/90 dark:bg-slate-800/90 backdrop-blur-2xl border border-slate-200 dark:border-slate-700/50 rounded-2xl shadow-xl p-1.5 flex flex-col gap-1 opacity-0 invisible scale-95 -translate-y-2 origin-top transition-all duration-300" style="transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);">
+        </div>
+    </div>
+
+    <div class="fixed inset-0 z-0 pointer-events-none">
+        <div class="absolute inset-0 bg-grid"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-slate-50/50 to-slate-50 dark:via-darkBg/80 dark:to-darkBg"></div>
+        <div class="absolute inset-0 flex items-center justify-center overflow-hidden">
+            <img src="/logo.png" alt="Watermark" class="w-[120%] max-w-none md:w-[80%] opacity-[0.05] dark:opacity-[0.10] object-contain scale-150 md:scale-110 pointer-events-none" onerror="this.style.display='none'">
+        </div>
+        <div class="absolute top-[-10%] start-[-10%] w-[400px] h-[400px] sm:w-[700px] sm:h-[700px] bg-gradient-to-br from-blue-600/20 via-indigo-500/20 to-purple-600/20 rounded-full blur-[100px] sm:blur-[140px] animate-blob-1 hw-accel"></div>
+        <div class="absolute bottom-[20%] end-[-10%] w-[400px] h-[400px] sm:w-[600px] sm:h-[600px] bg-gradient-to-tr from-emerald-500/10 via-teal-500/10 to-cyan-500/20 rounded-full blur-[100px] sm:blur-[140px] animate-blob-2 hw-accel"></div>
+    </div>
+
+    <main class="relative z-10 max-w-6xl mx-auto px-3 sm:px-4 pt-20 md:pt-24">
+        
+        <header class="text-center mb-12 md:mb-20">
+            <div class="mx-auto mb-8 sm:mb-12 relative flex items-center justify-center w-full opacity-0 spring-up" style="animation-delay: 0.1s;">
+                <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <div class="w-[250px] h-[60px] sm:w-[350px] md:w-[400px] md:h-[120px] rounded-full bg-gradient-to-r from-blue-500/30 via-indigo-500/30 to-purple-500/30 blur-2xl animate-pulse-logo hw-accel"></div>
+                </div>
+
+                <div class="relative z-10 flex items-center justify-center gap-2 sm:gap-4 p-1.5 sm:p-2.5 rounded-full bg-white/50 dark:bg-slate-900/40 backdrop-blur-2xl border border-white/60 dark:border-slate-700/50 shadow-[0_20px_40px_-10px_rgba(59,130,246,0.2)]">
+                    <div class="w-[3.5rem] h-[3.5rem] sm:w-[5.5rem] sm:h-[5.5rem] md:w-[6.5rem] md:h-[6.5rem] rounded-full overflow-hidden border-[1.5px] sm:border-[3px] border-white dark:border-slate-600 shadow-lg bg-white dark:bg-slate-800 flex items-center justify-center p-1.5 sm:p-3 hover:scale-105 hover:-rotate-6 transition-transform cursor-pointer">
+                        <img src="/REASA.png" alt="REASA" class="w-full h-full object-contain scale-[2]" onerror="this.outerHTML='<span class=\'text-[10px] text-slate-400 font-bold\'>REASA</span>'">
+                    </div>
+                    <div class="w-[1px] h-8 sm:h-12 bg-gradient-to-b from-transparent via-slate-300 dark:via-slate-600 to-transparent"></div>
+                    <div class="w-[4rem] h-[4rem] sm:w-[6.5rem] sm:h-[6.5rem] md:w-[7.5rem] md:h-[7.5rem] rounded-full overflow-hidden border-2 sm:border-[4px] border-white dark:border-slate-500 shadow-2xl bg-white dark:bg-slate-800 flex items-center justify-center p-1.5 sm:p-3 ring-4 ring-blue-500/10 dark:ring-blue-500/20 hover:scale-110 hover:rotate-6 transition-transform cursor-pointer z-10">
+                        <img src="/logo.png" alt="Logo" class="w-full h-full object-contain" onerror="this.outerHTML='<span class=\'text-[12px] text-slate-300 font-bold\'>LOGO</span>'">
+                    </div>
+                    <div class="w-[1px] h-8 sm:h-12 bg-gradient-to-b from-transparent via-slate-300 dark:via-slate-600 to-transparent"></div>
+                    <div class="w-[3.5rem] h-[3.5rem] sm:w-[5.5rem] sm:h-[5.5rem] md:w-[6.5rem] md:h-[6.5rem] rounded-full overflow-hidden border-[1.5px] sm:border-[3px] border-white dark:border-slate-600 shadow-lg bg-white dark:bg-slate-800 flex items-center justify-center p-1.5 sm:p-3 hover:scale-105 hover:rotate-6 transition-transform cursor-pointer">
+                        <img src="/SHAPAP.png" alt="SHAPAP" class="w-full h-full object-contain scale-[1.5]" onerror="this.outerHTML='<span class=\'text-[8px] text-slate-400 font-bold text-center\'>الشباب<br>والرياضة</span>'">
+                    </div>
+                </div>
+                <div class="absolute -top-3 -end-2 sm:-top-5 sm:-end-4 text-yellow-400 drop-shadow-[0_0_15px_rgba(250,204,21,0.5)] z-20 animate-[spin_15s_linear_infinite]">
+                    <i data-lucide="sparkles" class="w-6 h-6 sm:w-8 sm:h-8 fill-yellow-400/40"></i>
+                </div>
+            </div>
+
+            <div id="welcome-badge" class="hidden items-center justify-center gap-2 mb-6 px-6 py-2.5 rounded-full bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-white/50 dark:border-slate-700/50 shadow-md w-fit mx-auto opacity-0 spring-up" style="animation-delay: 0.2s;">
+                <span class="text-lg sm:text-xl inline-block animate-wave">👋</span>
+                <span data-i18n="welcomeBadge" class="text-slate-600 dark:text-slate-300 font-medium text-sm sm:text-base">أهلاً بك يا</span>
+                <span id="user-display-name" class="bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 dark:from-blue-400 dark:via-indigo-400 dark:to-purple-400 bg-clip-text text-transparent font-black tracking-wide text-base sm:text-lg"></span>
+            </div>
+
+            <div class="relative inline-flex flex-col items-center">
+                <div class="absolute -top-10 md:-top-20 -end-4 md:-end-20 text-7xl md:text-[12rem] font-black select-none pointer-events-none z-0 tracking-tighter opacity-0 spring-up" style="animation-delay: 0.3s;">
+                    <span class="bg-clip-text text-transparent bg-gradient-to-b from-slate-200/80 dark:from-slate-800/80 to-transparent">2026</span>
+                </div>
+
+                <h2 class="text-3xl md:text-5xl lg:text-7xl font-black mb-4 sm:mb-6 text-slate-800 dark:text-white tracking-tight relative z-10 flex items-center sm:items-start justify-center gap-2 sm:gap-3 opacity-0 spring-up" style="animation-delay: 0.4s;">
+                    <span data-i18n="agendaTitle">جدول أعمال الملتقى</span>
+                    <span class="inline-flex items-center justify-center px-2 py-1 md:px-4 md:py-1.5 text-[10px] sm:text-sm md:text-xl font-black text-white bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg md:rounded-2xl shadow-lg shadow-purple-500/30 mt-1 md:mt-2 transform ltr:rotate-6 rtl:-rotate-6 transition-transform hover:rotate-0">2026</span>
+                </h2>
+                
+                <div class="w-24 sm:w-32 h-1.5 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 rounded-full mb-4 sm:mb-6 relative z-10 shadow-[0_0_15px_rgba(99,102,241,0.5)] opacity-0 spring-up" style="animation-delay: 0.5s;"></div>
+
+                <p data-i18n="agendaSubtitle" class="text-slate-600 dark:text-slate-400 text-sm sm:text-lg md:text-xl max-w-2xl mx-auto font-medium leading-relaxed relative z-10 px-2 opacity-0 spring-up" style="animation-delay: 0.6s;">
+                    النسخة الرابعة للذكاء الاصطناعي - من 4 إبريل إلى 8 إبريل 2026
+                </p>
+            </div>
+        </header>
+
+        <div class="w-full relative z-40 mb-8 sm:mb-12 opacity-0 spring-up" style="animation-delay: 0.7s;">
+            <div id="tabs-container" class="flex overflow-x-auto hide-scrollbar gap-3 sm:gap-4 pb-4 snap-x snap-mandatory px-1 sm:px-2">
+            </div>
+        </div>
+
+        <div class="w-full max-w-4xl mx-auto relative px-2 sm:px-0" id="timeline-wrapper">
+            <div class="absolute top-8 bottom-8 w-[2px] rounded-full hidden md:block bg-gradient-to-b from-transparent via-slate-300 dark:via-slate-700/50 to-transparent overflow-hidden end-[27px] z-0">
+                <div class="absolute w-full h-32 bg-gradient-to-b from-transparent via-indigo-500 to-transparent blur-[2px] animate-timeline hw-accel"></div>
+            </div>
+            <div id="events-list" class="space-y-4 sm:space-y-6 md:space-y-8 relative z-10">
+            </div>
+        </div>
+
+        <div class="mt-16 sm:mt-24 text-center opacity-0 spring-up" style="animation-delay: 0.8s;">
+            <div class="text-slate-500 dark:text-slate-400 text-xs sm:text-sm md:text-base font-medium flex items-center justify-center gap-2 sm:gap-3 bg-white/60 dark:bg-white/[0.02] backdrop-blur-xl py-3 sm:py-4 px-5 sm:px-8 rounded-full w-fit mx-auto border border-slate-200/50 dark:border-white/5 shadow-lg">
+                <div class="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-emerald-100 dark:bg-emerald-500/10 flex items-center justify-center text-emerald-600 dark:text-emerald-400 shrink-0 border border-emerald-200 dark:border-emerald-500/20 shadow-[0_0_15px_rgba(16,185,129,0.2)] relative">
+                    <div class="absolute inset-0 bg-emerald-400/20 rounded-full animate-ping opacity-50"></div>
+                    <i data-lucide="check-circle-2" class="w-3.5 h-3.5 sm:w-4 sm:h-4 relative z-10"></i>
+                </div>
+                <span data-i18n="footerNote" class="tracking-wide">جميع المواعيد بتوقيت القاهرة المحلي. التسجيل متاح بالـ QR طوال أيام الملتقى.</span>
+            </div>
+        </div>
+
+        <div id="partners-section" class="w-full mt-10 sm:mt-16 md:mt-20 max-w-6xl opacity-0 spring-up" style="animation-delay: 0.9s;">
+            <div class="flex items-center justify-center gap-2 sm:gap-4 mb-4 sm:mb-8 opacity-60 px-4">
+                <div class="h-[1px] flex-1 max-w-[40px] sm:max-w-[80px] bg-gradient-to-r from-transparent to-slate-400 dark:to-slate-500"></div>
+                <div data-i18n="partners" class="text-center text-[9px] sm:text-xs md:text-sm font-bold text-slate-500 dark:text-slate-400 tracking-[0.15em] sm:tracking-[0.25em] uppercase whitespace-nowrap">
+                    شركاء النجاح والرعاة
+                </div>
+                <div class="h-[1px] flex-1 max-w-[40px] sm:max-w-[80px] bg-gradient-to-l from-transparent to-slate-400 dark:to-slate-500"></div>
+            </div>
+            
+            <div id="partners-grid" class="flex overflow-x-auto pb-4 sm:pb-0 sm:grid sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-5 gap-3 sm:gap-4 md:gap-5 px-4 snap-x hide-scrollbar justify-center">
+            </div>
+        </div>
+
+        <div class="mt-10 sm:mt-12 text-center relative z-10 opacity-0 spring-up" style="animation-delay: 1s;">
+            <div class="inline-flex items-center gap-1.5 sm:gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-full bg-white/50 dark:bg-slate-800/40 border border-slate-200/50 dark:border-slate-700/50 backdrop-blur-md shadow-sm hover:shadow-indigo-500/10 dark:hover:shadow-indigo-500/20 transition-all cursor-default">
+                <i data-lucide="heart" class="w-3 h-3 sm:w-3.5 sm:h-3.5 text-red-500 fill-red-500/30 animate-pulse"></i>
+                <span class="text-slate-500 dark:text-slate-400 text-[10px] sm:text-xs font-bold uppercase tracking-wider">Engineered by</span>
+                <span class="bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-500 dark:from-blue-400 dark:via-indigo-400 dark:to-purple-400 bg-clip-text text-transparent text-[11px] sm:text-sm font-black tracking-widest">Yousef Sala7</span>
+                <i data-lucide="award" class="w-3 h-3 sm:w-3.5 sm:h-3.5 text-yellow-500"></i>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        lucide.createIcons();
+
+        // 1. إعدادات الترجمة واللغات
+        const LANGUAGES = [
+            { code: 'ar', name: 'العربية', flag: '🇸🇦' },
+            { code: 'en', name: 'English', flag: '🇬🇧' },
+            { code: 'fr', name: 'Français', flag: '🇫🇷' },
+            { code: 'es', name: 'Español', flag: '🇪🇸' },
+            { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
+            { code: 'zh', name: '中文', flag: '🇨🇳' }
+        ];
+
+        const translations = {
+            ar: {
+                back: 'رجوع',
+                agendaTitle: 'أجندة الملتقى',
+                agendaSubtitle: 'الملتقى الدولي الرابع للذكاء الاصطناعي | 4 – 8 إبريل 2026',
+                welcomeBadge: 'أهلاً بك يا',
+                sessionDetails: 'تفاصيل الجلسة',
+                footerNote: 'جميع المواعيد بتوقيت القاهرة المحلي. التسجيل متاح بالـ QR طوال أيام الملتقى.',
+                partners: 'شركاء النجاح والرعاة',
+                days: {
+                    day1: { title: 'اليوم الأول', date: 'السبت 4 إبريل 2026', subtitle: '' },
+                    day2: { title: 'اليوم الثاني', date: 'الأحد 5 إبريل 2026', subtitle: '(الأسس التقنية في الذكاء الاصطناعي)' },
+                    day3: { title: 'اليوم الثالث', date: 'الاثنين 6 إبريل 2026', subtitle: '(السيادة الرقمية في عصر الذكاء الإصطناعي)' },
+                    day4: { title: 'اليوم الرابع', date: 'الثلاثاء 7 إبريل 2026', subtitle: '(الختام)' },
+                    day5: { title: 'اليوم الخامس', date: 'الأربعاء 8 إبريل 2026', subtitle: '' }
+                },
+                events: {
+                    day1_1: 'استقبال + تسجيل', day1_2: 'الغداء', day1_3: 'تعارف + شرح الأجندة + تقسيمات', day1_4: 'العشاء', day1_5: 'جولة سياحية بشارع المعز ومنطقة خان الخليلي',
+                    day2_1: 'الافطار', day2_2: 'التسجيل بـ QR', day2_3: 'الكلمات الإفتتاحية وحلقة نقاشية عن تقنيات الذكاء الإصطناعي', day2_4: 'الغداء', day2_5: 'إفتتاح الملتقى وتفقد معرض الابتكارات العلمية', day2_6: 'العشاء',
+                    day3_1: 'الإفطار', day3_2: 'ورشة تدريبية "المشهد العالمي للذكاء الاصطناعي - الفرص والمخاطر"', day3_3: 'حلقات نقاشية "تأثير الذكاء الاصطناعي على إدارة المؤسسات"', day3_4: 'الغداء', day3_5: '" تحكيم المشاريع الباحثين "', day3_6: 'رحلة نيلية', day3_7: 'العشاء',
+                    day4_1: 'الإفطار', day4_2: 'الذكاء الاصطناعي وتحصين الوعي في عصر الحروب الإدراكية', day4_3: 'التكريم توزيع جوائز أفضل الأبحاث والمساهمات', day4_4: 'الغداء', day4_5: 'جولة حرة', day4_6: 'العشاء',
+                    day5_1: 'الإفطار', day5_2: 'المغادرة'
+                }
+            },
+            en: {
+                back: 'Back',
+                agendaTitle: 'Event Agenda',
+                agendaSubtitle: '4th International AI Forum | April 4 – 8, 2026',
+                welcomeBadge: 'Welcome',
+                sessionDetails: 'Session Details',
+                footerNote: 'All times are in Cairo Local Time. QR Registration is available throughout the forum.',
+                partners: 'Sponsors & Partners',
+                days: {
+                    day1: { title: 'Day 1', date: 'Saturday, April 4, 2026', subtitle: '' },
+                    day2: { title: 'Day 2', date: 'Sunday, April 5, 2026', subtitle: '(Technical Foundations in AI)' },
+                    day3: { title: 'Day 3', date: 'Monday, April 6, 2026', subtitle: '(Digital Sovereignty in the Era of AI)' },
+                    day4: { title: 'Day 4', date: 'Tuesday, April 7, 2026', subtitle: '(Conclusion)' },
+                    day5: { title: 'Day 5', date: 'Wednesday, April 8, 2026', subtitle: '' }
+                },
+                events: {
+                    day1_1: 'Reception + Registration', day1_2: 'Lunch', day1_3: 'Acquaintance + Agenda + Divisions', day1_4: 'Dinner', day1_5: 'Tour in Al-Muizz Street and Khan el-Khalili',
+                    day2_1: 'Breakfast', day2_2: 'QR Registration', day2_3: 'Opening Speeches & Panel on AI Technologies', day2_4: 'Lunch', day2_5: 'Forum Opening & Scientific Innovations Exhibition', day2_6: 'Dinner',
+                    day3_1: 'Breakfast', day3_2: 'Training Workshop: Global AI Landscape', day3_3: 'Panel Discussions: Impact of AI on Management', day3_4: 'Lunch', day3_5: 'Judging Researchers Projects', day3_6: 'Nile Cruise', day3_7: 'Dinner',
+                    day4_1: 'Breakfast', day4_2: 'AI and Fortifying Awareness in Cognitive Wars', day4_3: 'Honoring & Distributing Awards', day4_4: 'Lunch', day4_5: 'Free Tour', day4_6: 'Dinner',
+                    day5_1: 'Breakfast', day5_2: 'Departure'
+                }
+            },
+            fr: {
+                back: 'Retour',
+                agendaTitle: 'Agenda de l\'Événement',
+                agendaSubtitle: '4ème Forum International de l\'IA | 4 – 8 Avril 2026',
+                welcomeBadge: 'Bienvenue',
+                sessionDetails: 'Détails de la session',
+                footerNote: 'Toutes les heures sont à l\'heure locale du Caire. L\'inscription par QR est disponible.',
+                partners: 'Sponsors et Partenaires',
+                days: {
+                    day1: { title: 'Jour 1', date: 'Samedi 4 Avril 2026', subtitle: '' },
+                    day2: { title: 'Jour 2', date: 'Dimanche 5 Avril 2026', subtitle: '(Fondements Techniques de l\'IA)' },
+                    day3: { title: 'Jour 3', date: 'Lundi 6 Avril 2026', subtitle: '(Souveraineté Numérique à l\'ère de l\'IA)' },
+                    day4: { title: 'Jour 4', date: 'Mardi 7 Avril 2026', subtitle: '(Clôture)' },
+                    day5: { title: 'Jour 5', date: 'Mercredi 8 Avril 2026', subtitle: '' }
+                },
+                events: {
+                    day1_1: 'Accueil + Inscription', day1_2: 'Déjeuner', day1_3: 'Réseautage + Présentation de l\'agenda + Groupes', day1_4: 'Dîner', day1_5: 'Visite touristique de la rue Al-Muizz',
+                    day2_1: 'Petit-déjeuner', day2_2: 'Inscription par QR', day2_3: 'Mots d\'ouverture (Panel sur les technologies de l\'IA)', day2_4: 'Déjeuner', day2_5: 'Ouverture du Forum & Exposition', day2_6: 'Dîner',
+                    day3_1: 'Petit-déjeuner', day3_2: 'Atelier: Paysage Mondial de l\'IA', day3_3: 'Panels: Impact de l\'IA sur la gestion', day3_4: 'Déjeuner', day3_5: 'Évaluation des projets', day3_6: 'Croisière sur le Nil', day3_7: 'Dîner',
+                    day4_1: 'Petit-déjeuner', day4_2: 'L\'IA et le renforcement de la conscience', day4_3: 'Remise des prix des meilleures recherches', day4_4: 'Déjeuner', day4_5: 'Visite Libre', day4_6: 'Dîner',
+                    day5_1: 'Petit-déjeuner', day5_2: 'Départ'
+                }
+            },
+            es: {
+                back: 'Volver',
+                agendaTitle: 'Agenda del Evento',
+                agendaSubtitle: '4º Foro Internacional de IA | 4 – 8 de Abril de 2026',
+                welcomeBadge: 'Bienvenido',
+                sessionDetails: 'Detalles de la Sesión',
+                footerNote: 'Todas las horas corresponden a la hora local de El Cairo. El registro por QR está disponible.',
+                partners: 'Patrocinadores y Socios',
+                days: {
+                    day1: { title: 'Día 1', date: 'Sábado 4 de Abril de 2026', subtitle: '' },
+                    day2: { title: 'Día 2', date: 'Domingo 5 de Abril de 2026', subtitle: '(Fundamentos Técnicos en IA)' },
+                    day3: { title: 'Día 3', date: 'Lunes 6 de Abril de 2026', subtitle: '(Soberanía Digital en la Era de la IA)' },
+                    day4: { title: 'Día 4', date: 'Martes 7 de Abril de 2026', subtitle: '(Clausura)' },
+                    day5: { title: 'Día 5', date: 'Miércoles 8 de Abril de 2026', subtitle: '' }
+                },
+                events: {
+                    day1_1: 'Recepción + Registro', day1_2: 'Almuerzo', day1_3: 'Conocimiento + Explicación de la agenda + Divisiones', day1_4: 'Cena', day1_5: 'Recorrido turístico por la calle Al-Muizz',
+                    day2_1: 'Desayuno', day2_2: 'Registro por QR', day2_3: 'Discursos de Apertura (Panel sobre Tecnologías de IA)', day2_4: 'Almuerzo', day2_5: 'Apertura del Foro y Exposición de Innovaciones', day2_6: 'Cena',
+                    day3_1: 'Desayuno', day3_2: 'Taller: Panorama Global de la IA', day3_3: 'Paneles: Impacto de la IA en la Gestión Institucional', day3_4: 'Almuerzo', day3_5: 'Evaluación de Proyectos de Investigadores', day3_6: 'Crucero por el Nilo', day3_7: 'Cena',
+                    day4_1: 'Desayuno', day4_2: 'La IA y el Fortalecimiento de la Conciencia', day4_3: 'Homenaje y Entrega de Premios', day4_4: 'Almuerzo', day4_5: 'Tour Libre', day4_6: 'Cena',
+                    day5_1: 'Desayuno', day5_2: 'Salida'
+                }
+            },
+            de: {
+                back: 'Zurück',
+                agendaTitle: 'Veranstaltungsagenda',
+                agendaSubtitle: '4. Internationales KI-Forum | 4. – 8. April 2026',
+                welcomeBadge: 'Willkommen',
+                sessionDetails: 'Sitzungsdetails',
+                footerNote: 'Alle Zeiten sind in Kairoer Ortszeit. Die QR-Registrierung ist verfügbar.',
+                partners: 'Sponsoren & Partner',
+                days: {
+                    day1: { title: 'Tag 1', date: 'Samstag, 4. April 2026', subtitle: '' },
+                    day2: { title: 'Tag 2', date: 'Sonntag, 5. April 2026', subtitle: '(Technische Grundlagen der KI)' },
+                    day3: { title: 'Tag 3', date: 'Montag, 6. April 2026', subtitle: '(Digitale Souveränität im KI-Zeitalter)' },
+                    day4: { title: 'Tag 4', date: 'Dienstag, 7. April 2026', subtitle: '(Abschluss)' },
+                    day5: { title: 'Tag 5', date: 'Mittwoch, 8. April 2026', subtitle: '' }
+                },
+                events: {
+                    day1_1: 'Empfang + Registrierung', day1_2: 'Mittagessen', day1_3: 'Kennenlernen + Erklärung der Agenda + Gruppen', day1_4: 'Abendessen', day1_5: 'Besichtigungstour in der Al-Muizz-Straße',
+                    day2_1: 'Frühstück', day2_2: 'QR-Registrierung', day2_3: 'Eröffnungsreden (Podiumsdiskussion über KI)', day2_4: 'Mittagessen', day2_5: 'Forumseröffnung & Ausstellung von Innovationen', day2_6: 'Abendessen',
+                    day3_1: 'Frühstück', day3_2: 'Workshop: Die globale KI-Landschaft', day3_3: 'Podiumsdiskussion: Auswirkungen von KI auf Management', day3_4: 'Mittagessen', day3_5: 'Bewertung von Forscherprojekten', day3_6: 'Nilkreuzfahrt', day3_7: 'Abendessen',
+                    day4_1: 'Frühstück', day4_2: 'KI und Stärkung des Bewusstseins', day4_3: 'Ehrung & Preisverleihung', day4_4: 'Mittagessen', day4_5: 'Freie Tour', day4_6: 'Abendessen',
+                    day5_1: 'Frühstück', day5_2: 'Abreise'
+                }
+            },
+            zh: {
+                back: '返回',
+                agendaTitle: '活动议程',
+                agendaSubtitle: '第四届国际人工智能论坛 | 2026年4月4日至8日',
+                welcomeBadge: '欢迎',
+                sessionDetails: '会议详情',
+                footerNote: '所有时间均为开罗当地时间。提供二维码注册。',
+                partners: '赞助商与合作伙伴',
+                days: {
+                    day1: { title: '第一天', date: '2026年4月4日，星期六', subtitle: '' },
+                    day2: { title: '第二天', date: '2026年4月5日，星期日', subtitle: '（人工智能的技术基础）' },
+                    day3: { title: '第三天', date: '2026年4月6日，星期一', subtitle: '（人工智能时代的数字主权）' },
+                    day4: { title: '第四天', date: '2026年4月7日，星期二', subtitle: '（闭幕）' },
+                    day5: { title: '第五天', date: '2026年4月8日，星期三', subtitle: '' }
+                },
+                events: {
+                    day1_1: '接待与注册', day1_2: '午餐', day1_3: '相识交流 + 议程讲解 + 分组', day1_4: '晚餐', day1_5: '参观穆伊兹街和哈利利市场',
+                    day2_1: '早餐', day2_2: '二维码注册', day2_3: '开幕致辞（人工智能技术专题讨论会）', day2_4: '午餐', day2_5: '论坛开幕及参观科学创新展览', day2_6: '晚餐',
+                    day3_1: '早餐', day3_2: '培训工作坊: 全球人工智能前景', day3_3: '专题讨论会: 人工智能对机构管理的影响', day3_4: '午餐', day3_5: '评估研究人员项目', day3_6: '尼罗河游船', day3_7: '晚餐',
+                    day4_1: '早餐', day4_2: '认知战争时代的人工智能与意识强化', day4_3: '表彰与颁发最佳研究和贡献奖', day4_4: '午餐', day4_5: '自由活动', day4_6: '晚餐',
+                    day5_1: '早餐', day5_2: '离开'
+                }
+            }
+        };
+
+        function t(key, lang) {
+            const keys = key.split('.');
+            let value = translations[lang];
+            for (let k of keys) {
+                if (value === undefined) return key;
+                value = value[k];
+            }
+            return value || key;
+        }
+
+        // 2. داتا الأجندة
+        const agendaStructure = [
+            {
+                id: 'day1', 
+                events: [
+                    { timeAr: '٠٩:٠٠ ص – ١٢:٠٠ م', timeEn: '09:00 AM - 12:00 PM', key: 'events.day1_1', icon: 'users' },
+                    { timeAr: '٠١:٠٠ م – ٠٣:٠٠ م', timeEn: '01:00 PM - 03:00 PM', key: 'events.day1_2', icon: 'utensils' },
+                    { timeAr: '٠٣:٣٠ م – ٠٥:٠٠ م', timeEn: '03:30 PM - 05:00 PM', key: 'events.day1_3', icon: 'presentation' },
+                    { timeAr: '٠٧:٠٠ م – ٠٩:٠٠ م', timeEn: '07:00 PM - 09:00 PM', key: 'events.day1_4', icon: 'utensils' },
+                    { timeAr: '٠٩:٣٠ م – ١١:٣٠ م', timeEn: '09:30 PM - 11:30 PM', key: 'events.day1_5', icon: 'map-pin' }
+                ]
+            },
+            {
+                id: 'day2', 
+                events: [
+                    { timeAr: '٠٧:٠٠ ص – ٠٩:٠٠ ص', timeEn: '07:00 AM - 09:00 AM', key: 'events.day2_1', icon: 'coffee' },
+                    { timeAr: '٠٩:١٥ ص – ١٠:٠٠ ص', timeEn: '09:15 AM - 10:00 AM', key: 'events.day2_2', icon: 'qr-code' },
+                    { timeAr: '١٠:١٥ ص – ٠١:٠٠ م', timeEn: '10:15 AM - 01:00 PM', key: 'events.day2_3', icon: 'mic' },
+                    { timeAr: '٠٢:٠٠ م – ٠٤:٠٠ م', timeEn: '02:00 PM - 04:00 PM', key: 'events.day2_4', icon: 'utensils' },
+                    { timeAr: '٠٤:٣٠ م – ٠٧:٠٠ م', timeEn: '04:30 PM - 07:00 PM', key: 'events.day2_5', icon: 'lightbulb' },
+                    { timeAr: '٠٨:٠٠ م – ١٠:٠٠ م', timeEn: '08:00 PM - 10:00 PM', key: 'events.day2_6', icon: 'utensils' }
+                ]
+            },
+            {
+                id: 'day3', 
+                events: [
+                    { timeAr: '٠٧:٠٠ ص – ٠٨:٠٠ ص', timeEn: '07:00 AM - 08:00 AM', key: 'events.day3_1', icon: 'coffee' },
+                    { timeAr: '٠٩:٠٠ ص – ١١:٠٠ ص', timeEn: '09:00 AM - 11:00 AM', key: 'events.day3_2', icon: 'presentation' },
+                    { timeAr: '١١:٣٠ ص – ٠٢:٠٠ م', timeEn: '11:30 AM - 02:00 PM', key: 'events.day3_3', icon: 'users' },
+                    { timeAr: '٠٢:٣٠ م – ٠٣:٣٠ م', timeEn: '02:30 PM - 03:30 PM', key: 'events.day3_4', icon: 'utensils' },
+                    { timeAr: '٠٣:٤٥ م – ٠٥:٠٠ م', timeEn: '03:45 PM - 05:00 PM', key: 'events.day3_5', icon: 'award' },
+                    { timeAr: '٠٥:٣٠ م – ٠٨:٣٠ م', timeEn: '05:30 PM - 08:30 PM', key: 'events.day3_6', icon: 'ship' },
+                    { timeAr: '٠٩:٠٠ م – ١٠:٣٠ م', timeEn: '09:00 PM - 10:30 PM', key: 'events.day3_7', icon: 'utensils' }
+                ]
+            },
+            {
+                id: 'day4', 
+                events: [
+                    { timeAr: '٠٧:٠٠ ص – ٠٨:٠٠ ص', timeEn: '07:00 AM - 08:00 AM', key: 'events.day4_1', icon: 'coffee' },
+                    { timeAr: '١٠:٠٠ ص – ١١:٣٠ ص', timeEn: '10:00 AM - 11:30 AM', key: 'events.day4_2', icon: 'lightbulb' },
+                    { timeAr: '١٢:٠٠ م – ٠٢:٠٠ م', timeEn: '12:00 PM - 02:00 PM', key: 'events.day4_3', icon: 'award' },
+                    { timeAr: '٠٢:٣٠ م – ٠٤:٠٠ م', timeEn: '02:30 PM - 04:00 PM', key: 'events.day4_4', icon: 'utensils' },
+                    { timeAr: '٠٤:٣٠ م – ٠٧:٠٠ م', timeEn: '04:30 PM - 07:00 PM', key: 'events.day4_5', icon: 'map-pin' },
+                    { timeAr: '٠٧:٣٠ م – ١٠:٠٠ م', timeEn: '07:30 PM - 10:00 PM', key: 'events.day4_6', icon: 'utensils' }
+                ]
+            },
+            {
+                id: 'day5', 
+                events: [
+                    { timeAr: '٠٧:٠٠ ص – ٠٨:٠٠ ص', timeEn: '07:00 AM - 08:00 AM', key: 'events.day5_1', icon: 'coffee' },
+                    { timeAr: '٠٨:٣٠ ص – ١١:٠٠ ص', timeEn: '08:30 AM - 11:00 AM', key: 'events.day5_2', icon: 'plane-takeoff' }
+                ]
+            }
+        ];
+
+        let activeDayId = agendaStructure[0].id;
+        let currentAppLang = localStorage.getItem('appLang') || 'ar';
+
+        // 3. دوال بناء الواجهة
+        function renderTabs() {
+            const tabsContainer = document.getElementById('tabs-container');
+            tabsContainer.innerHTML = '';
+            
+            agendaStructure.forEach((day, index) => {
+                const isActive = day.id === activeDayId;
+                const title = t(`days.${day.id}.title`, currentAppLang);
+                const subtitle = t(`days.${day.id}.subtitle`, currentAppLang);
+                const date = t(`days.${day.id}.date`, currentAppLang);
+                
+                const baseClasses = "min-w-[85vw] sm:min-w-[320px] snap-center text-start p-5 sm:p-6 rounded-[1.5rem] sm:rounded-[2rem] transition-all duration-500 flex flex-col justify-between group relative overflow-hidden backdrop-blur-xl border shrink-0 cursor-pointer";
+                const activeClasses = "border-slate-200 dark:border-white/10 text-white shadow-[0_15px_30px_-10px_rgba(79,70,229,0.3)] scale-[1.02] bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600";
+                const inactiveClasses = "bg-white/60 dark:bg-white/[0.02] text-slate-700 dark:text-slate-400 hover:bg-white/90 dark:hover:bg-white/[0.05] border-slate-200/60 dark:border-white/5 hover:border-indigo-300 dark:hover:border-indigo-500/30 shadow-sm";
+
+                const tab = document.createElement('div');
+                tab.className = `${baseClasses} ${isActive ? activeClasses : inactiveClasses}`;
+                tab.onclick = () => changeDay(day.id, index);
+
+                tab.innerHTML = `
+                    ${isActive ? `<div class="absolute top-0 right-1/4 left-1/4 h-1.5 bg-white rounded-b-full shadow-[0_0_10px_white] z-10 animate-[springUpAnim_0.4s_ease-out]"></div>` : ''}
+                    
+                    <div class="relative z-10 w-full flex items-start justify-between mb-3 sm:mb-4">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center transition-colors ${isActive ? 'bg-white/20 text-white' : 'bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400'}">
+                            <i data-lucide="calendar" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+                        </div>
+                        ${isActive ? `
+                            <div class="spring-up" style="animation-duration: 0.5s;">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 sm:w-6 sm:h-6 text-white drop-shadow-sm"></i>
+                            </div>
+                        ` : ''}
+                    </div>
+
+                    <div class="relative z-10">
+                        <div class="font-extrabold text-xl sm:text-2xl mb-1 ${isActive ? 'text-white' : 'text-slate-800 dark:text-slate-200'}">${title}</div>
+                        ${subtitle ? `<div class="text-xs sm:text-sm font-medium mb-3 ${isActive ? 'text-blue-100' : 'text-slate-500 dark:text-slate-400'}">${subtitle}</div>` : ''}
+                        <div class="text-xs flex items-center gap-1.5 font-bold mt-auto pt-3 sm:pt-4 border-t ${isActive ? 'text-blue-100 border-white/20' : 'text-slate-500 border-slate-200 dark:border-slate-700'}">
+                            <i data-lucide="calendar-days" class="w-3.5 h-3.5"></i>
+                            ${date}
+                        </div>
+                    </div>
+                `;
+                tabsContainer.appendChild(tab);
+            });
+            lucide.createIcons();
+        }
+
+        function renderEvents() {
+            const eventsList = document.getElementById('events-list');
+            const currentDay = agendaStructure.find(d => d.id === activeDayId);
+            const sessionText = t('sessionDetails', currentAppLang);
+            eventsList.innerHTML = '';
+            
+            currentDay.events.forEach((event, index) => {
+                const title = t(event.key, currentAppLang);
+                const time = currentAppLang === 'ar' ? event.timeAr : event.timeEn;
+                const delay = index * 0.1; 
+                
+                const eventHtml = document.createElement('div');
+                eventHtml.className = `relative flex flex-col md:flex-row gap-3 sm:gap-4 md:gap-8 group opacity-0 slide-in hw-accel`;
+                eventHtml.style.animationDelay = `${delay}s`;
+
+                eventHtml.innerHTML = `
+                    <div class="hidden md:flex mt-6 relative z-10 items-center justify-center w-14 h-14 shrink-0">
+                        <div class="absolute inset-0 rounded-full bg-indigo-500/20 group-hover:animate-[ping_1.5s_infinite] opacity-0 group-hover:opacity-100"></div>
+                        <div class="absolute inset-0 rounded-full bg-indigo-500/10 group-hover:bg-indigo-500/30 blur-md transition-all duration-500"></div>
+                        <div class="relative w-10 h-10 rounded-full bg-white dark:bg-slate-800 flex items-center justify-center text-slate-500 dark:text-slate-500 border-2 border-slate-200 dark:border-slate-700 group-hover:border-indigo-500 dark:group-hover:border-indigo-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 shadow-sm transition-all duration-300 group-hover:scale-110">
+                            <i data-lucide="${event.icon}" class="w-[18px] h-[18px]"></i>
+                        </div>
+                    </div>
+
+                    <div class="flex-1 relative rounded-[1.25rem] sm:rounded-[2rem] transition-all duration-500 sm:group-hover:-translate-y-1.5 cursor-default">
+                        <div class="absolute -inset-[1px] bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 rounded-[1.25rem] sm:rounded-[2rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style="mask-image: linear-gradient(#fff, transparent); -webkit-mask-image: linear-gradient(#fff, transparent);"></div>
+                        <div class="relative h-full bg-white/80 dark:bg-[#0B1221]/70 backdrop-blur-2xl border border-slate-200/50 dark:border-white/5 shadow-[0_8px_30px_-10px_rgba(0,0,0,0.05)] dark:shadow-[0_8px_30px_-10px_rgba(0,0,0,0.5)] rounded-[1.25rem] sm:rounded-[2rem] p-5 sm:p-6 md:p-8 overflow-hidden z-10">
+                            <div class="absolute inset-0 bg-gradient-to-br from-white/40 dark:from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+
+                            <div class="flex flex-col gap-3 sm:gap-4 relative z-10">
+                                <div class="self-start flex items-center gap-2 font-black text-slate-700 dark:text-slate-300 bg-white/90 dark:bg-slate-900 px-3 py-1.5 sm:px-4 sm:py-2.5 rounded-lg sm:rounded-xl shrink-0 border border-slate-200 dark:border-slate-700 shadow-sm group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-indigo-600 group-hover:text-white group-hover:border-transparent group-hover:shadow-[0_0_20px_rgba(79,70,229,0.3)] transition-all duration-300 w-fit">
+                                    <i data-lucide="clock" class="w-3.5 h-3.5 sm:w-[18px] sm:h-[18px] text-indigo-500 group-hover:text-blue-200"></i>
+                                    <span dir="ltr" class="text-xs sm:text-sm md:text-base tracking-wider">${time}</span>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-base sm:text-xl md:text-2xl font-bold text-slate-800 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 leading-relaxed sm:leading-tight">
+                                        ${title}
+                                    </h3>
+                                    <div class="md:hidden flex items-center gap-1.5 text-slate-500 dark:text-slate-400 mt-3 sm:mt-4 w-fit bg-slate-100/80 dark:bg-slate-800/50 px-3 py-1.5 rounded-lg border border-slate-200/50 dark:border-slate-700/50 backdrop-blur-sm">
+                                        <i data-lucide="${event.icon}" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
+                                        <span class="text-[10px] sm:text-xs font-semibold">${sessionText}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                eventsList.appendChild(eventHtml);
+            });
+            lucide.createIcons();
+        }
+
+        function renderPartners() {
+            const partnersData = [
+                { src: "/arab-academy.png", alt: "Arab Academy", invertDark: true },
+                { src: "/misr-el-kheir.png", alt: "Misr El Kheir" },
+                { src: "/must.png", alt: "MUST" },
+                { src: "/mawaheb.png", alt: "MAWAHEB" },
+                { src: "/amg-group.png", alt: "AMG Group" }
+            ];
+
+            const partnersGrid = document.getElementById('partners-grid');
+            partnersGrid.innerHTML = '';
+            
+            partnersData.forEach((partner, index) => {
+                const delay = 900 + (index * 100); 
+                const card = document.createElement('div');
+                card.className = `snap-center shrink-0 flex items-center justify-center w-[110px] h-[65px] sm:w-full sm:h-20 md:h-24 transition-all duration-300 cursor-pointer bg-white/70 dark:bg-white/[0.02] backdrop-blur-md rounded-xl sm:rounded-2xl p-2.5 sm:p-4 border border-slate-200/80 dark:border-white/5 hover:shadow-lg hover:shadow-blue-500/10 hover:bg-white/90 dark:hover:bg-white/[0.05] hover:-translate-y-1 hover:scale-105 opacity-0 spring-up`;
+                card.style.animationDelay = `${delay}ms`;
+                
+                const img = document.createElement('img');
+                img.src = partner.src;
+                img.alt = partner.alt;
+                const invertClass = partner.invertDark ? 'dark:invert' : '';
+                img.className = `w-full h-full object-contain opacity-70 dark:opacity-40 transition-all duration-300 filter grayscale hover:grayscale-0 scale-[1.3] sm:scale-[1.4] hover:scale-[1.5] ${invertClass}`;
+                img.onerror = function() { this.outerHTML = `<span class='text-[10px] text-slate-500 font-bold'>${partner.alt}</span>`; };
+
+                card.appendChild(img);
+                partnersGrid.appendChild(card);
+            });
+        }
+
+        // --- 5. التحكم في اللغات ---
+        function renderLanguageMenu(currentLangCode) {
+            const dropdown = document.getElementById('lang-dropdown');
+            const displayBtn = document.getElementById('current-lang-display');
+            
+            const currentLang = LANGUAGES.find(l => l.code === currentLangCode) || LANGUAGES[0];
+            displayBtn.textContent = `${currentLang.flag} ${currentLang.code.toUpperCase()}`;
+            
+            dropdown.innerHTML = ''; 
+            LANGUAGES.forEach(lang => {
+                const isSelected = lang.code === currentLangCode;
+                const btn = document.createElement('button');
+                btn.className = `flex items-center gap-3 px-4 py-2.5 text-sm font-medium rounded-xl transition-all duration-200 text-start w-full
+                    ${isSelected ? 'bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-500 dark:to-indigo-500 text-white shadow-md' : 'text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700/50'}`;
+                btn.onclick = () => setLanguage(lang.code);
+                btn.innerHTML = `<span class="text-lg leading-none">${lang.flag}</span><span>${lang.name}</span>${isSelected ? `<i data-lucide="check" class="w-4 h-4 ms-auto"></i>` : ''}`;
+                dropdown.appendChild(btn);
+            });
+            lucide.createIcons();
+        }
+
+        function toggleLangMenu(forceClose = false) {
+            const langMenu = document.getElementById('lang-dropdown');
+            const chevron = document.getElementById('lang-chevron');
+            if (forceClose || !langMenu.classList.contains('opacity-0')) {
+                langMenu.classList.add('opacity-0', 'invisible', 'scale-95', '-translate-y-2');
+                chevron.classList.remove('rotate-180');
+            } else {
+                langMenu.classList.remove('opacity-0', 'invisible', 'scale-95', '-translate-y-2');
+                chevron.classList.add('rotate-180');
+            }
+        }
+
+        function setLanguage(lang) {
+            currentAppLang = lang;
+            localStorage.setItem('appLang', lang);
+            const dir = lang === 'ar' ? 'rtl' : 'ltr';
+            document.documentElement.lang = lang;
+            document.documentElement.dir = dir;
+
+            renderLanguageMenu(lang);
+
+            // تحديث النصوص الثابتة
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                el.innerHTML = t(key, lang);
+            });
+
+            // تحديث الأجندة
+            renderTabs();
+            renderEvents();
+
+            toggleLangMenu(true);
+        }
+
+        // --- 6. أحداث الواجهة (Swipe & Clicks) ---
+        function changeDay(newDayId, index) {
+            if (activeDayId === newDayId) return;
+            const eventsList = document.getElementById('events-list');
+            eventsList.classList.add('fade-out-blur');
+            
+            setTimeout(() => {
+                activeDayId = newDayId;
+                renderTabs();
+                renderEvents();
+                eventsList.classList.remove('fade-out-blur');
+                const tabsContainer = document.getElementById('tabs-container');
+                if(tabsContainer.children[index]) tabsContainer.children[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            }, 300);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('appLang') || 'ar';
+            setLanguage(savedLang);
+
+            const storedName = localStorage.getItem('userName');
+            if (storedName) {
+                document.getElementById('user-display-name').textContent = storedName;
+                document.getElementById('welcome-badge').classList.remove('hidden');
+                document.getElementById('welcome-badge').classList.add('flex');
+            }
+
+            document.getElementById('lang-toggle-btn').addEventListener('click', (e) => {
+                e.stopPropagation();
+                toggleLangMenu();
+            });
+            document.addEventListener('click', (e) => {
+                const langContainer = document.getElementById('lang-switcher-container');
+                if (langContainer && !langContainer.contains(e.target)) toggleLangMenu(true);
+            });
+
+            // Swipe logic
+            let touchstartX = 0, touchendX = 0;
+            const timelineArea = document.getElementById('timeline-wrapper');
+            timelineArea.addEventListener('touchstart', e => touchstartX = e.changedTouches[0].screenX, {passive: true});
+            timelineArea.addEventListener('touchend', e => {
+                touchendX = e.changedTouches[0].screenX;
+                const threshold = 60;
+                const currentIndex = agendaStructure.findIndex(d => d.id === activeDayId);
+                const isRTL = document.documentElement.dir === 'rtl';
+                
+                if (touchendX < touchstartX - threshold) { // سحب لليسار
+                    const nextIndex = isRTL ? currentIndex - 1 : currentIndex + 1;
+                    if (agendaStructure[nextIndex]) changeDay(agendaStructure[nextIndex].id, nextIndex);
+                } else if (touchendX > touchstartX + threshold) { // سحب لليمين
+                    const nextIndex = isRTL ? currentIndex + 1 : currentIndex - 1;
+                    if (agendaStructure[nextIndex]) changeDay(agendaStructure[nextIndex].id, nextIndex);
+                }
+            }, {passive: true});
+
+            renderPartners();
+        });
+    </script>
+</body>
+</html>
